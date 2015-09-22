@@ -116,7 +116,7 @@ var createAndUploadArtifacts = function (options, done) {
         uploads[pomDir + "/inner.xml.md5"] = groupArtifactVersionPath + '/' + 'maven-metadata.xml.md5';
     }
 
-    var remoteArtifactName = options.artifactId + '-' + options.versiononly + '-' + options.suffix;
+    var remoteArtifactName = options.artifactId + '-' + options.versiononly + '-' + options.suffix + '-' + options.buildNumber;
     uploads[pomDir + "/pom.xml"] = groupArtifactVersionPath + '/' + remoteArtifactName + '.pom';
     uploads[pomDir + "/pom.xml.sha1"] = groupArtifactVersionPath + '/' + remoteArtifactName + '.pom.sha1';
     uploads[pomDir + "/pom.xml.md5"] = groupArtifactVersionPath + '/' + remoteArtifactName + '.pom.md5';

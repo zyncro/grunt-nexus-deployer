@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-    <groupId><%= groupId %></groupId>
-    <artifactId><%= artifactId %></artifactId>
-    <version><%= version %></version>
-    <versioning>
-        <lastUpdated><%= lastUpdated %></lastUpdated>
-    </versioning>
+	<groupId><%= groupId %></groupId>
+	<artifactId><%= artifactId %></artifactId>
+	<version><%= version %></version>
+	<versioning>
+		<snapshot>
+			<timestamp><%= suffix %></timestamp>
+			<buildNumber><%= buildNumber %></buildNumber>
+		</snapshot>
+		<lastUpdated><%= lastUpdated %></lastUpdated>
+		<snapshotVersions>
+			<snapshotVersion>
+				<extension><%= packaging %></extension>
+				<value><%= version %>-<%= suffix %>-<%= buildNumber %></value>
+				<updated><%= lastUpdated %></updated>
+			</snapshotVersion>
+		</snapshotVersions>
+	</versioning>
 </metadata>
