@@ -46,7 +46,13 @@ var createAndUploadArtifacts = function (options, done) {
 
 
     save(createFile('project-metadata.xml', options), pomDir, 'outer.xml');
-    save(createFile('latest-metadata.xml', options), pomDir, 'inner.xml');
+
+    if (options.suffix) {
+        save(createFile('latest-metadata.xml', options), pomDir, 'inner.xml');
+    } else {
+        save(createFile('project-metadata.xml', options), pomDir, 'inner.xml');
+    }
+
     save(createFile('pom.xml', options), pomDir, 'pom.xml');
 
     var artifactData = file.read(options.artifact, {encoding: 'binary'});
